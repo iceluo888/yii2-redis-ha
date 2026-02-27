@@ -34,14 +34,24 @@ class Connection extends \yii\redis\Connection {
 	 */
 	public $masterName;
 
-	/**
-	 * Returns a value indicating whether the DB connection is established.
-	 *
-	 * @return boolean whether the DB connection is established
-	 */
-	public function getIsActive () {
-		return $this->_socket !== null;
-	}
+    /**
+     * Sentinel username for authentication (Redis 6.0+)
+     */
+    public $sentinelUsername = null;
+
+    /**
+     * Sentinel password for authentication
+     */
+    public $sentinelPassword = null;
+
+    /**
+     * Returns a value indicating whether the DB connection is established.
+     *
+     * @return boolean whether the DB connection is established
+     */
+    public function getIsActive () {
+        return $this->_socket !== null;
+    }
 
 	/**
 	 * Establishes a DB connection.

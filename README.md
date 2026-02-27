@@ -61,7 +61,9 @@ Basic example:
 							'masterName' => 'mymaster',
 							'sentinels' => [
 									'localhost'
-							]
+							],
+							'password' => 'redis password',
+							'sentinelPassword' => 'sentinel password',
 						]
 				],
 ```
